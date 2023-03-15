@@ -1,10 +1,8 @@
 import express, { Request, Response } from 'express';
+import { categoriesRoutes } from './routes/categories.routes';
 
 const app = express();
 app.use(express.json());
-
-app.get('/', (req: Request, res: Response) => {
-    return res.send('Hello World');
-});
+app.use(categoriesRoutes);
 
 app.listen(3000);
