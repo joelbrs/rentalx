@@ -4,8 +4,6 @@ interface ICreateCategoryDTO {
     name: string;
     description: string
 }
-
-
 export class CategoriesRepository {
     private categories: Array<Category> = [];
 
@@ -22,5 +20,9 @@ export class CategoriesRepository {
         });
     
         this.categories.push(category);
+    }
+
+    list(): Array<Category> {
+        return this.categories;
     }
 }
